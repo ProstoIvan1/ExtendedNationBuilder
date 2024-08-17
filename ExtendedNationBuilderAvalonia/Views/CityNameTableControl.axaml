@@ -1,0 +1,43 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="450"
+             x:Class="ExtendedNationBuilderAvalonia.CityNameTableControl">
+	<Grid RowDefinitions="*, 30" ColumnDefinitions="*, *">
+		<DataGrid Grid.Row="0"
+				  Grid.ColumnSpan="2"
+				  VerticalAlignment="Stretch"
+				  ItemsSource="{Binding CityNames}"
+				  SelectedIndex="{Binding SelectedIndex}"
+				  SelectionMode="Single"
+				  CanUserSortColumns="False"
+				  GridLinesVisibility="Horizontal"
+				  SelectionChanged="DataGrid_SelectionChanged"
+				  x:Name="dataGrid">
+
+			<DataGrid.Columns>
+				<DataGridTextColumn Header="{Binding Header}"
+									Binding="{Binding Name}"
+									Width="*"/>
+			</DataGrid.Columns>
+			
+		</DataGrid>	
+		
+		<Button Grid.Row="1"
+				Grid.Column="0"
+				Content="Add"
+				HorizontalContentAlignment="Center"
+				Width="100"
+				Command="{Binding Add}"/>
+		
+		<Button Grid.Row="1"
+				Grid.Column="1"
+				Content="Remove"
+				HorizontalAlignment="Right"
+				HorizontalContentAlignment="Center"
+				Width="100"
+				Command="{Binding Remove}"/>
+		
+	</Grid>
+</UserControl>

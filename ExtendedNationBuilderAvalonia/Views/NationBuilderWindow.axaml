@@ -1,0 +1,127 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" 
+		d:DesignWidth="1920" 
+		d:DesignHeight="1080"
+        x:Class="ExtendedNationBuilderAvalonia.Views.NationBuilderWindow"
+        Title="NationBuilderWindow"
+		MinWidth="1030"
+		MinHeight="650">
+	<Grid Margin="20" >
+
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition/>
+			<ColumnDefinition Width="20"/>
+			<ColumnDefinition MinWidth="200"
+							  MaxWidth="500"/>
+		</Grid.ColumnDefinitions>
+
+		<Grid Grid.Column="2"
+			  RowDefinitions="30, *, 40">
+			
+			<TextBlock Text="Created nations (whith the mod)"
+					   Grid.Row="0"/>
+		
+			<ListBox HorizontalAlignment="Stretch"
+					 Grid.Row="1"
+					 ItemsSource="{Binding Nations}"
+					 SelectedIndex="{Binding SelectedNationIndex}"
+					 SelectionChanged="ListBox_SelectionChanged"/>
+			
+			<Button Grid.Row="2"
+					Width="100"
+					Height="30"
+					VerticalAlignment="Bottom"
+					HorizontalAlignment="Center"
+					TextBlock.TextAlignment="Center"
+					Content="Add new"
+					Command="{Binding AddNewNation}"/>
+			
+		</Grid>
+		
+
+		
+		<GridSplitter Grid.Column="1" 
+					  Grid.RowSpan="2"
+					  ResizeDirection="Columns"/>
+
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="40"/>
+				<RowDefinition Height="40"/>
+				<RowDefinition/>
+				<RowDefinition Height="40"/>
+				<RowDefinition Height="40"/>
+				<RowDefinition Height="40"/>
+				<RowDefinition Height="40"/>
+			</Grid.RowDefinitions>
+
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition/>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+
+			<TextBox Grid.Row="0" 
+					 Grid.ColumnSpan="2"
+					 VerticalAlignment="Top"
+					 Watermark="Nation name"
+					 Text="{Binding NationName}"/>
+
+			<TextBox Grid.Row="1"
+					 Grid.ColumnSpan="2"
+					 VerticalAlignment="Top"
+					 Watermark="Revolutionary nation name"
+					 Text="{Binding RevolutionaryNationName}"/>
+
+			<ContentPresenter Grid.Row="2" 
+							  Grid.Column="0"
+							  VerticalAlignment="Stretch"
+							  Margin="0, 0, 10, 0"
+							  Content="{Binding CityNameTable}"/>
+
+			<ContentPresenter Grid.Row="2"
+							  Grid.Column="1"
+							  VerticalAlignment="Stretch"
+							  Margin="10, 0, 0, 0"
+							  Content="{Binding TownNameTable}"/>
+
+			<ContentPresenter Grid.Row="3" 
+							  Grid.ColumnSpan="2" 
+							  VerticalAlignment="Bottom"
+							  Content="{Binding FlagImagePath}"/>
+
+			<ContentPresenter Grid.Row="4"
+							  Grid.ColumnSpan="2"
+							  VerticalAlignment="Bottom"
+							  Content="{Binding RevolutionaryFlagImagePath}"/>
+
+			<ComboBox Grid.Row="5" 
+					  Grid.ColumnSpan="2"
+					  HorizontalAlignment="Stretch"
+					  VerticalAlignment="Bottom"
+					  PlaceholderText="Starting Bonus"
+					  ItemsSource="{Binding StartingBonuses}"
+					  SelectedItem="{Binding StartingBonus}"/>
+
+			<Button Grid.Row="6" 
+					Grid.Column="0" 
+					Content="Save"
+					VerticalAlignment="Bottom"
+					Width="100"
+					TextBlock.TextAlignment="Center"
+					Command="{Binding SaveCommand}"/>
+			
+			<Button Grid.Row="6" 
+					Grid.Column="1" 
+					Content="Delete"
+					HorizontalAlignment="Right"
+					Width="100"
+					VerticalAlignment="Bottom"
+					TextBlock.TextAlignment="Center"
+					Command="{Binding Delete}"/>
+		</Grid>
+
+	</Grid>
+</Window>
