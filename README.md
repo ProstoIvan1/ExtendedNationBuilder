@@ -1,3 +1,4 @@
 # About
-Extended Nation Builder is a Millenia mod, that allows creating custum nations whith custom flags, city and towns names, unlike the in-game editor. To see your custom nations in the game enable mod "EnbNations" in the "Mods" tab. <br>
-All created whith tis mod nations contains in <UserFolder>\AppData\LocalLow\CPromptGames\Millennia\Mods\EnbNations.
+Extended Nation Builder is a Millenia mod that allows you to create custom nations with custom flags, city and town names, unlike the in-game editor. To see your custom nations in-game, enable the "EnbNations" mod in the "Mods" tab.
+____
+All nations created with this mod are located in <UserFolder>\AppData\LocalLow\CPromptGames\Millennia\Mods\EnbNations.
