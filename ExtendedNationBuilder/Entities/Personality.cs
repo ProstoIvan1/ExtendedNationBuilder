@@ -27,7 +27,16 @@ namespace ExtendedNationBuilder.Entities
     {
         public static Personality[] Get { get; } =
         [
-            new Personality("Bully", "Default"),
+            new Personality("Default", "Default"),
+            new Personality("Aggressive", "Aggressive"),
+            new Personality("Reserved", "Reserved"),
+            new Personality("Opportunist", "Opportunist"),
+            new Personality("Bully", "Bully"),
+            new Personality("Isolationist", "Isolationist"),
+            new Personality("Cooperative", "Cooperative"),
+            new Personality("Careful", "Careful"),
+            new Personality("Appeaser", "Appeaser"),
+            new Personality("Max", "Max"),
         ];
 
         public static Personality Default => Get[0];
