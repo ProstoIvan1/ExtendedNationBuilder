@@ -28,13 +28,19 @@ namespace ExtendedNationBuilder.Entities
     {
         public static StartingBonus[] Get { get; } =
         [
+            new StartingBonus("RANDOM", "Random"),
             new StartingBonus("WARBAND", "Age I: Warband Unit"),
             new StartingBonus("ARCHER", "Age I: Archer Unit"),
             new StartingBonus("SCOUT", "Age I: Scout Unit"),
+            new StartingBonus("SMILODON", "Age I: Smilodon Unit"),
+            new StartingBonus("WHEATFARMER", "Age I: Wheat Cultivator Unit"),
             new StartingBonus("WARFARE", "Age I: + Warfare XP"),
             new StartingBonus("EXPLORATION", "Age I: + Exploration XP"),
             new StartingBonus("IMPROVEMENT", "Age I: + Improvement Points"),
             new StartingBonus("INNOVATION", "Age I: + Innovation"),
+            new StartingBonus("PROSPECTOR_MARBLE", "Age II: Marble Prospector Unit"),
+            new StartingBonus("HORTICULTURIST", "Age II: Horticulturist Unit"),
+            new StartingBonus("ANIMALCULTURIST", "Age II: Animal Cultivator Unit"),
             new StartingBonus("ENGINEERING", "Age II: + Engineering XP"),
             new StartingBonus("DIPLOMACY", "Age II: + Diplomacy XP"),
             new StartingBonus("ARTS", "Age III: + Arts XP"),

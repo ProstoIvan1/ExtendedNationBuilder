@@ -64,7 +64,7 @@ namespace ExtendedNationBuilderAvalonia.ViewModels
             FlagImagePath = new(owner, "Flag image");
             RevolutionaryFlagImagePath = new(owner, "Revolutionary flag image");
 
-            var bonusList = new List<StartingBonus>() { randomBonusOption };
+            var bonusList = new List<StartingBonus>();
             bonusList.AddRange(AllStartingBonuses.Get);
             StartingBonuses = bonusList.ToArray();
         }
@@ -93,9 +93,6 @@ namespace ExtendedNationBuilderAvalonia.ViewModels
                 CityNameTable.Names.Count > 0 && TownNameTable.Names.Count > 0 &&
                 RevolutionaryNationName != null && StartingBonus != null)
             {
-                if (StartingBonus == randomBonusOption)
-                    StartingBonus = AllStartingBonuses.GetRandom();
-
                 if (0 <= SelectedNationIndex && SelectedNationIndex < Nations.Count)
                     SaveCurrent();
                 else 
